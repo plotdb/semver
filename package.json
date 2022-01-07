@@ -1,0 +1,20 @@
+{
+  "name": "@plotdb/semver",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.min.js",
+  "directories": {
+    "doc": "doc",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "zbryikt",
+  "license": "MIT",
+  "devDependencies": {
+    "livescript": "^1.6.0",
+    "uglify-js": "^3.2.0"
+  }
+}
