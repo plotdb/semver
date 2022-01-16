@@ -2,6 +2,9 @@
   "name": "@plotdb/semver",
   "version": "0.0.1",
   "description": "",
+  "files": [
+    "dist/**/*"
+  ],
   "main": "dist/index.min.js",
   "directories": {
     "doc": "doc",
