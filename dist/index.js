@@ -2,10 +2,12 @@
   var re, parse, fit;
   re = /(\D*)([^-]+)-?([.0-9a-zA-Z]*)(\+?[.0-9a-zA-Z]*)/;
   parse = function(v){
-    var ret, range, vs;
-    ret = re.exec(v);
-    range = ret[1] || '';
-    vs = ret[2].split('.');
+    var ret, ref$, vs, range;
+    if (!(ret = re.exec(v))) {
+      ref$ = [[], '', []], vs = ref$[0], range = ref$[1], ret = ref$[2];
+    } else {
+      ref$ = [ret[2].split('.'), ret[1] || ''], vs = ref$[0], range = ref$[1];
+    }
     return [+(vs[0] || 0), +(vs[1] || 0), +(vs[2] || 0), ret[3] || '', ret[4] || '', range];
   };
   fit = function(v, r){
@@ -13,9 +15,9 @@
     ref$ = [
       Array.isArray(v)
         ? v
-        : parse(v), Array.isArray(r)
+        : parse(v || ''), Array.isArray(r)
         ? r
-        : parse(r)
+        : parse(r || '')
     ], v = ref$[0], r = ref$[1];
     j = (function(){
       switch (r[5]) {
